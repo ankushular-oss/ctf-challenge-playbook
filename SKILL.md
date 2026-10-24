@@ -35,6 +35,7 @@ whenToUse: >
 
 > **路径占位符**：文中 `<HARNESS_HOME>` = 你自己的工具/工作目录根路径（Windows 形如 `D:\xxx`）；
 > `<HARNESS_DIR>` = 同一目录在 WSL 里的名字（即 `/mnt/d/<HARNESS_DIR>`）。按本机实际替换。
+> 工具占位符同名同理：`<TOOLS_DIR>` / `<PYTHON_EXE>` / `<X64DBG_EXE>` / `<X64DBG_DIR>` / `<TESSERACT_EXE>` 按你本机实际安装位置替换。
 > 引用的自建脚本（截图、docx 装配、固件工具链）未随仓库发布，按文中描述的能力自己实现或找等价品。
 
 ## 〇、六条硬闸门（任何 CTF 都先过这六条）

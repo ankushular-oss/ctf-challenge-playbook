@@ -9,9 +9,9 @@ CTF skill 目录（refs/CATALOG.txt）
   用法（niubash/Git Bash）：
     grep -i "UDS" "<本skill>/refs/CATALOG.txt"
 
-入口 SKILL.md 约 6 KB；refs 合计 177,043 字节 / 12 个文件——**按需读，别整读**。
+入口 SKILL.md 约 6 KB；refs 合计 176,869 字节 / 12 个文件——**按需读，别整读**。
 本文件由脚本生成（关键词表在生成脚本里），新增 refs 文件后请同步补一行。
-生成时间：2026-10-24 21:05
+生成时间：2026-10-24 22:25
 
 ----------------------------------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ CTF skill 目录（refs/CATALOG.txt）
                                            何时读：拿到第一个 flag 前 + 每次要提交/核对台账时
                                            关键词：flag 口径 哈希 sha256 大写 hex 台账 总账 回执 flags.md 提交 候选 平台判正 AI声明 一票否决
 
-05-wp-delivery.md                32,595B  [553 行]
+05-wp-delivery.md                32,462B  [553 行]
                                            何时读：要交 WP / 题解 / 解题报告时
                                            关键词：WP WriteUp 题解 docx 版式 参考件 复刻 截图 清晰度 shot.ps1 PrintWindow x64dbg OCR 自检 模板
 
@@ -45,7 +45,7 @@ CTF skill 目录（refs/CATALOG.txt）
                                            何时读：题面出现固件/ECU/T-Box/车机/诊断/CAN 时
                                            关键词：汽车 车联网 固件 binwalk 解包 squashfs ubifs jffs2 rootfs UDS CAN SecOC DoIP SOME-IP OTA IVI T-Box ECU 诊断 DID
 
-12-family-patterns.md            16,883B  [267 行]
+12-family-patterns.md            16,886B  [267 行]
                                            何时读：认出题目"家族指纹"时
                                            关键词：家族 Mosaic 筛选 页 诱饵 CRC 差分 补丁链 链式摘要 CAN 状态推进 重绑定 签名 oracle padding DoIP 解码
 
@@ -53,7 +53,7 @@ CTF skill 目录（refs/CATALOG.txt）
                                            何时读：提到极氪/西湖论剑/霄元杯，或要打新比赛判断赛制形态时
                                            关键词：极氪 Zeekr 西湖论剑 DASCTF 霄元杯 星域之盾 平台 红线 赛制 形态 AI声明 邮箱 WP提交 手法清单 接口 错误码
 
-30-local-toolchain.md             5,175B  [86 行]
+30-local-toolchain.md             5,131B  [86 行]
                                            何时读：需要用本机工具时（别猜路径）
                                            关键词：工具链 WSL binwalk unsquashfs IDA JADX tshark MCP VLM OCR WinRT tesseract session-forensics 取证 /tmp grep -a
 

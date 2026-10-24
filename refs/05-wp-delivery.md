@@ -214,12 +214,12 @@ docx 里图片固定 **6.74 in** 宽，所以图中文字的**有效字号**：
 
 #### 3.3.2 真实 x64dbg 截图（含脱壳过程）
 
-x64dbg 装在本机：`D:\tools\x64dbg\release\x64\x64dbg.exe`（2026.05.27）。
+x64dbg 装在本机：`<X64DBG_EXE>`（2026.05.27）。
 Qt 窗口**不响应** `PostMessage` 的 `WM_KEYDOWN`，所以**别想用模拟按键驱动它**。
 改用**自写驱动插件 ＋ 文件当控制通道**（这是本流程的核心工具）：
 
 - 源码：`<HARNESS_HOME>\x64plug\shotnav.cpp`
-- 产物：`shotnav.dp64` → 放到 `D:\tools\x64dbg\release\x64\plugins\`
+- 产物：`shotnav.dp64` → 放到 `<X64DBG_DIR>\plugins\`
 - 命令：`ShotGo`（绝对地址跳反汇编）、`ShotGoC`（加注释后跳）、`ShotGoD`（Dump 面板）、`ShotStep`
 - 控制通道：脚本往 `<HARNESS_HOME>\wp_shots\step.txt` 写一行
   `<seq> <kind> <hexaddr> [label]`，插件轮询执行后把结果写 `state.txt`
@@ -229,7 +229,7 @@ Qt 窗口**不响应** `PostMessage` 的 `WM_KEYDOWN`，所以**别想用模拟�
 
 ```powershell
 cd <HARNESS_HOME>\x64plug; cmd /c build.bat      # 产出 shotnav.dp64
-Copy-Item shotnav.dp64 D:\tools\x64dbg\release\x64\plugins\shotnav.dp64 -Force
+Copy-Item shotnav.dp64 <X64DBG_DIR>\plugins\shotnav.dp64 -Force
 ```
 
 **脱壳取"解压后内存"的关键手法**（适用于懒解压壳，如 UPX＋NRV2B）：
@@ -255,8 +255,8 @@ Copy-Item shotnav.dp64 D:\tools\x64dbg\release\x64\plugins\shotnav.dp64 -Force
 
 ```powershell
 # 命令行 OCR（本机 tesseract，路径要显式给）
-D:\tools\python.exe -c "import pytesseract; from PIL import Image; \
-pytesseract.pytesseract.tesseract_cmd=r'C:\Program Files\Tesseract-OCR\tesseract.exe'; \
+<PYTHON_EXE> -c "import pytesseract; from PIL import Image; \
+pytesseract.pytesseract.tesseract_cmd=r'<TESSERACT_EXE>'; \
 print(pytesseract.image_to_string(Image.open(r'<png>'), config='--psm 6')[:400])"
 ```
 
@@ -485,10 +485,10 @@ print(len(d.paragraphs), sum('graphic' in x._p.xml for x in d.paragraphs))
      （先 ^c 清行，再发命令，再 {ENTER}），最后 PrintWindow(hwnd, hdc, 2) 抓图。
    - 命令里带 `cls;` 让画面干净。
 4. 调试器类截图（x64dbg）：
-   - x64dbg 在 D:\tools\x64dbg\release\x64\x64dbg.exe；Qt 窗口**不响应 PostMessage**，
+   - x64dbg 在 <X64DBG_EXE>；Qt 窗口**不响应 PostMessage**，
      别用模拟按键驱动它。
    - 用我已有的驱动插件 <HARNESS_HOME>\x64plug\shotnav.cpp（编译产物 shotnav.dp64
-     放到 D:\tools\x64dbg\release\x64\plugins\），它注册了 ShotGo / ShotGoC / ShotGoD / ShotStep，
+     放到 <X64DBG_DIR>\plugins\），它注册了 ShotGo / ShotGoC / ShotGoD / ShotStep，
      控制通道是文件：往 <HARNESS_HOME>\wp_shots\step.txt 写一行
      `<seq> <kind> <hexaddr> [label]`（kind: 91=跳反汇编 93=加注释+跳 94=跳Dump），
      插件执行后把结果写 state.txt。

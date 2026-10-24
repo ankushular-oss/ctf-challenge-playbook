@@ -205,7 +205,7 @@ flag = sha256(canonical.encode() + manifest_secret).hexdigest()
 - **题面规则互斥时，正确动作是找第三条证据把口径定死**，不是列"两种读法"当备选按顺序试。
   本次 `payload.version >= 250` 与 unlock 帧版本最高 `243` 互斥；实际 grader 判正的是 **frame 188（v241）**：
   `>= 250` 那条是对**当前状态帧**的规则，"original signed payload" = 唯一签名有效且 VIN 匹配的真影子，两者不冲突。
-- **本机环境坑（复现时先绕开）**：`D:\tools\Lib` 下有 `dataclasses.py`/`inspect.py` **影子模块**，
+- **本机环境坑（复现时先绕开）**：`<TOOLS_DIR>\Lib` 下有 `dataclasses.py`/`inspect.py` **影子模块**，
   会让 `cryptography` 的 serialization 导入链在 `pub.verify()` 处报
   `TypeError: missing 1 required positional argument: 'signature_algorithm'`
   ⇒ 题目脚本改用**纯标准库手写 P-256 验签**；另外脚本**别命名为 `inspect.py`**（会遮蔽标准库）。

@@ -9,9 +9,9 @@
 
 | 工具 | 路径 / 版本 | 备注 |
 |---|---|---|
-| IDA Pro 9.2 | `D:\BaiduNetdiskDownload\IDA Professional 9.2\` | 含 `idat.exe`，**可批处理**（先 `--help` 确认参数） |
+| IDA Pro 9.2 | `<IDA_DIR>` | 含 `idat.exe`，**可批处理**（先 `--help` 确认参数） |
 | 7-Zip | 已装 | ext4/cramfs/cpio/tar/iso 通吃 |
-| tshark | `D:\wireshark\tshark.exe` | 流量题首选 |
+| tshark | `<TSHARK_EXE>` | 流量题首选 |
 | Python 3.13 | 已装 | capstone / unicorn / keystone / angr / z3 / pycryptodome / pwntools / PyMuPDF |
 | 其它 | Node、Java、sqlite3、gcc/mingw | Java 环境用于 JADX / ysoserial 类工作 |
 
@@ -47,7 +47,7 @@ cpio、交叉 objdump（arm/aarch64/mips）、sqlite3、cramfsck、simg2img
 
 - **调外部程序前先跑 `--help`**（尤其 IDA / 自定义工具）；**不确定的参数不要猜**。
 - **单个大输出先落盘再摘要**，别灌进上下文。
-- 本机 `D:\tools\Lib` 下有 `dataclasses.py` / `inspect.py` **影子模块**，会打断 `cryptography` 的
+- 本机 `<TOOLS_DIR>\Lib` 下有 `dataclasses.py` / `inspect.py` **影子模块**，会打断 `cryptography` 的
   import 链（`pub.verify()` 报 `TypeError: missing 1 required positional argument: 'signature_algorithm'`），
   且**脚本别命名为 `inspect.py`** —— 复现细节见 `12-family-patterns.md` 家族 4·陷阱。
 
