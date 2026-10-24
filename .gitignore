@@ -1,0 +1,13 @@
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# editors
+.vscode/
+.idea/
+*.swp
+
+# local / private
+*.local.md
+.private/

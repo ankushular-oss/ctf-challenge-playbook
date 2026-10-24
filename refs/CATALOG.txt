@@ -1,0 +1,75 @@
+CTF skill 目录（refs/CATALOG.txt）
+====================================================================================================
+
+用途：**不要为了"了解全貌"把 refs 全读一遍**。先在这里 grep，再只读命中的那一个文件。
+
+  用法（PowerShell）：
+    Select-String -Path "<本skill>\refs\CATALOG.txt" -Pattern "UDS"   # 找内容在哪
+    Select-String -Path "<本skill>\refs\CATALOG.txt" -Pattern "何时读"  # 只看时机
+  用法（niubash/Git Bash）：
+    grep -i "UDS" "<本skill>/refs/CATALOG.txt"
+
+入口 SKILL.md 约 6 KB；refs 合计 177,043 字节 / 12 个文件——**按需读，别整读**。
+本文件由脚本生成（关键词表在生成脚本里），新增 refs 文件后请同步补一行。
+生成时间：2026-10-24 21:05
+
+----------------------------------------------------------------------------------------------------
+
+文件                                     大小  何时读 / grep 关键词
+----------------------------------------------------------------------------------------------------
+01-tempo-and-checklist.md        15,910B  [209 行]
+                                           何时读：开赛前 + 每场分诊时
+                                           关键词：赛制 战术 动态积分 抢首杀 首杀 时间盒 15分钟 分诊 回扫 检查单 停止条件 赛前 赛后 WP窗口 提示词 轮换
+
+02-evidence-discipline.md        19,354B  [166 行]
+                                           何时读：卡住时 + 赛前默读一遍
+                                           关键词：证据 静默失败 自诊断 marker 记账 tries.log 错误模式 枚举 候选 假设 时间盒 我被什么咬 踩坑
+
+03-parallel-and-budget.md        13,400B  [190 行]
+                                           何时读：开赛前定并发 + 每次想"再开一个会话"时
+                                           关键词：并行 子agent 任务卡 fresh spawn 上下文 token 预算 账单 并发上限 收口 延迟 TRANSPORT 黑板 配额 动态靶机
+
+04-flag-and-ledger.md            11,939B  [167 行]
+                                           何时读：拿到第一个 flag 前 + 每次要提交/核对台账时
+                                           关键词：flag 口径 哈希 sha256 大写 hex 台账 总账 回执 flags.md 提交 候选 平台判正 AI声明 一票否决
+
+05-wp-delivery.md                32,595B  [553 行]
+                                           何时读：要交 WP / 题解 / 解题报告时
+                                           关键词：WP WriteUp 题解 docx 版式 参考件 复刻 截图 清晰度 shot.ps1 PrintWindow x64dbg OCR 自检 模板
+
+10-tech-index.md                 24,191B  [181 行]
+                                           何时读：分诊后准备动手 + 卡住找候选方向时（先新鲜分析）
+                                           关键词：Reverse Pwn Web Crypto Misc 取证 应急 手法 工具 shellcode 堆 UAF tcache gadget WAF 注入 SSTI 反序列化
+
+11-tech-automotive.md             6,930B  [99 行]
+                                           何时读：题面出现固件/ECU/T-Box/车机/诊断/CAN 时
+                                           关键词：汽车 车联网 固件 binwalk 解包 squashfs ubifs jffs2 rootfs UDS CAN SecOC DoIP SOME-IP OTA IVI T-Box ECU 诊断 DID
+
+12-family-patterns.md            16,883B  [267 行]
+                                           何时读：认出题目"家族指纹"时
+                                           关键词：家族 Mosaic 筛选 页 诱饵 CRC 差分 补丁链 链式摘要 CAN 状态推进 重绑定 签名 oracle padding DoIP 解码
+
+20-competition-notes.md          12,314B  [144 行]
+                                           何时读：提到极氪/西湖论剑/霄元杯，或要打新比赛判断赛制形态时
+                                           关键词：极氪 Zeekr 西湖论剑 DASCTF 霄元杯 星域之盾 平台 红线 赛制 形态 AI声明 邮箱 WP提交 手法清单 接口 错误码
+
+30-local-toolchain.md             5,175B  [86 行]
+                                           何时读：需要用本机工具时（别猜路径）
+                                           关键词：工具链 WSL binwalk unsquashfs IDA JADX tshark MCP VLM OCR WinRT tesseract session-forensics 取证 /tmp grep -a
+
+50-false-negative-discipline.md  10,929B  [196 行]
+                                           何时读：-
+                                           关键词：-
+
+99-reusable-highlights.md         7,423B  [86 行]
+                                           何时读：想直接抄现成招时
+                                           关键词：亮点 可复用 后门 复刻靶机 marker DNS TXT 弱DH 参数敏感性 队友资料 复核 seccomp
+
+----------------------------------------------------------------------------------------------------
+
+其它入口（不在本目录）
+  ..\SKILL.md                 统一入口：触发词 + 三条硬闸门 + 路由表
+  ..\..\muteki-blackboard\    多 agent 共享事实板（独立 skill，未合并）
+
+历史备份
+  <HARNESS_HOME>\backups\skills-ctf-<date>\   合并前 5 个 skill 的整目录
